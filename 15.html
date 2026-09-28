@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Dynamic Chart</title> 
+ 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+ 
+    <style>         body {             font-family: Arial;             background: #f1f5f9;             padding: 40px; 
+        } 
+ 
+        .container {             max-width: 800px;             margin: auto;             background: white;             padding: 30px;             border-radius: 15px;             box-shadow: 0 5px 20px #ccc; 
+        } 
+ 
+        h1 {             text-align: center;             color: #1e293b; 
+        } 
+ 
+        .chart {             height: 400px; 
+        } 
+    </style> 
+</head> 
+ 
+<body> 
+ 
+<div class="container"> 
+ 
+    <h1>Monthly Sales</h1> 
+ 
+    <div class="chart"> 
+        <canvas id="salesChart"></canvas> 
+    </div> 
+ 
+</div> 
+ 
+<script> 
+ 
+const months = [ 
+    "January", 
+    "February", 
+    "March", 
+    "April", 
+    "May", 
+    "June" 
+]; 
+ 
+const sales = [     12000, 
+    15000, 
+    18000, 
+    14000, 
+    22000, 
+    25000 
+]; 
+ 
+new Chart(document.getElementById("salesChart"), { 
+ 
+    type: "bar", 
+ 
+    data: {         labels: months, 
+ 
+        datasets: [{             label: "Sales (₹)",             data: sales,             backgroundColor: "#6366f1" 
+        }] 
+    }, 
+ 
+    options: {         responsive: true, 
+ 
+        scales: { 
+            y: { 
+                beginAtZero: true 
+            } 
+        } 
+    } 
+ 
+}); 
+ 
+</script> 
+ 
+</body> 
+</html> 
